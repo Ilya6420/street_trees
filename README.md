@@ -121,7 +121,7 @@ Link: https://www.anaconda.com/docs/getting-started/miniconda/install
     conda create -n <env_name> python=3.12
     conda activate <env_name>
     ```
-3. **Install dependencies:**
+4. **Install dependencies:**
     ```
     pip install -r requirements.txt
     ```
@@ -133,15 +133,17 @@ Link: https://www.anaconda.com/docs/getting-started/miniconda/install
     ```
     pip install -r requirements-notebook.txt
     ```
-4. **Create kernel for Notebooks**
+5. **Create kernel for Notebooks**
     ```
     pip install ipykernel
     python -m ipykernel install --user --name=<kernel name>
     ```
-4. **Set up environment variables:**
-
-    * Create .env file in the root
-    * Copy the .env-example variables file to .env and update it with valid OpenAI keys, and desired log level.
+6. **Dataset enabling**
+    * Install dataset from https://www.kaggle.com/datasets/new-york-city/ny-2015-street-tree-census-tree-data/data and put .csv into ```data/raw```
+    * Run ```3_data_preprocessing.ipynb``` notebook to get test data for endpoint (optional)
+    * In case you want to reproduce model result, run:
+        1. ```3_data_preprocessig.ipynb```
+        2. ```4_feature_engineering_training.ipynb ```
 
 # Running the Service
 1. Start the FastAPI app with Uvicorn:
@@ -237,10 +239,13 @@ docker compose up --build
 ## DS
 * More feature Engineering
 * Model parameter tuning
-* Integrate Mlflow for better experiment tracking
 * Try tree-based models
 ## Dev
 * add tests
 * improve exceptions
 * add logging
 * add tracing -> jaeger
+## MLOPS
+* Integrate Mlflow for better experiment tracking
+* Dataset Managemet using DVC with External Storage
+* Model Management with External Storage
