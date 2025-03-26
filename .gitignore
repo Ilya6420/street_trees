@@ -148,3 +148,8 @@ mergetool
 
 #Pycharm
 .idea
+
+data/processed/filtered_data_test_sample.csv
+data/processed/filtered_data.csv
+data/raw/2015-street-tree-census-tree-data.csv
+data/raw/socrata_metadata.json
