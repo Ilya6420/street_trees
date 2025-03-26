@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - MODEL_PATH=/app/models/tree_health_classifier.pth
+      - PREPROCESSOR_PATH=/app/models/transform_pipeline.pkl
+      - TARGET_ENCODER_PATH=/app/models/target_label_encoder.pkl
+
+volumes:
+  models:
+
