@@ -139,6 +139,7 @@ Link: https://www.anaconda.com/docs/getting-started/miniconda/install
     python -m ipykernel install --user --name=<kernel name>
     ```
 6. **Dataset enabling**
+    * Create in the root folder ```data``` with ```data/raw``` and ```data/processed``` subfolers.
     * Install dataset from https://www.kaggle.com/datasets/new-york-city/ny-2015-street-tree-census-tree-data/data and put .csv into ```data/raw```
     * Run ```3_data_preprocessing.ipynb``` notebook to get test data for endpoint (optional)
     * In case you want to reproduce model result, run:
